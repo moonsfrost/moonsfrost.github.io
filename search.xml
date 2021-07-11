@@ -148,4 +148,52 @@
         <tag>比赛</tag>
       </tags>
   </entry>
+  <entry>
+    <title>FOI2021 Summer DAY 1</title>
+    <url>/2021/07/11/FOI2021-Summer-DAY-1/</url>
+    <content><![CDATA[<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><a id="more"></a>
+
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><h3 id="倍增"><a href="#倍增" class="headerlink" title="倍增"></a>倍增</h3><p>预处理 $2^i$ 的信息。</p>
+<p>作为思想，藏数据结构中发挥着重要的作用。如树状数组，线段树，RMQ。</p>
+<h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><p>倍增思想，递归思想。<strong>开四倍空间！</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">通过提升简单操作的复杂度，降低困难操作的复杂度。</span><br><span class="line">                                ————lk</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>模板题 <del>(水时长)</del></p>
+</li>
+<li><p>又一道模板题：引出 <code>lazy_tag</code> <del>（改了但没完全改）</del></p>
+</li>
+<li><p>又又一道模板题：要求支持区间加，区间乘，区间求和。直接维护两个 <code>lazy_tag</code> 即可。</p>
+</li>
+<li><p>略微不是很水的模板题，要求支持区间加，区间求和，区间求平方和。利用 $(a+b)^2=a^2+2ab+b^2$ 将加的 <code>lazy_tag</code> 巧妙地转化为区间的平方和的变化量。可以以此类推到 $n$ 次方。</p>
+</li>
+</ul>
+<h3 id="权值线段树"><a href="#权值线段树" class="headerlink" title="权值线段树"></a>权值线段树</h3><ul>
+<li><p>经典板子题：要求支持单点修改，查询第 $k$ 大的数。对权值建线段树后，查询时二分。</p>
+</li>
+<li><p><strong>动态开点</strong>:题目同上，不过值域变成 $[1,10^9]$ 。<del>指针党狂喜</del></p>
+</li>
+<li><p><strong>主席树</strong>：可持久化线段树，支持查询历史版本。</p>
+</li>
+</ul>
+<h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><p>定义：对于数组中的 $x$ 号位置，若其二进制末尾有 $i$ 个 $0$ ，则其在第 $i$ 级，代表了一个长度为 $2^i$ 的区间的和。</p>
+<p>例子：对于标号为 $12$ 的位置，其二进制表示为 $1100$ ,则其表示 $1001$ ~ $1100$ 位置的和。</p>
+<p><del>可以靠背</del></p>
+<ul>
+<li>经典板子题：单点修改，区间求和。</li>
+</ul>
+<h3 id="RMQ"><a href="#RMQ" class="headerlink" title="RMQ"></a>RMQ</h3><ul>
+<li><p>ST表：$O(1)$ 查询区间最大最小值。</p>
+</li>
+<li><p>RMQ求区间最值所在的位置：预处理ST表示，同时维护一个最值所在的下表即可。</p>
+</li>
+<li><p>RMQ求LCA：在欧拉序上，点 $u$ 和点 $v$ 中间深度最小的点就是它们的LCA。</p>
+<p>  前置知识：dfs序（dfs遍历节点访问先后顺序），欧拉序（dfs遍历节点访问顺序）。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>FOI2021</tag>
+      </tags>
+  </entry>
 </search>
