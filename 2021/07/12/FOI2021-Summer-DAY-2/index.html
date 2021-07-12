@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hpic_gaitubao_1191x1191_gaitubao_32x32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FOI2021 Summer DAY 2">
+<meta property="og:url" content="http://yoursite.com/2021/07/12/FOI2021-Summer-DAY-2/index.html">
+<meta property="og:site_name" content="Moonsfrost&#39;s Blog">
+<meta property="og:description" content="字符串">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-12T02:36:13.000Z">
+<meta property="article:modified_time" content="2021-07-12T14:07:18.546Z">
+<meta property="article:author" content="Moonsfrost">
+<meta property="article:tag" content="FOI2021">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2021/07/12/FOI2021-Summer-DAY-2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>FOI2021 Summer DAY 2 | Moonsfrost's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Moonsfrost's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/12/FOI2021-Summer-DAY-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/hpic.jpg">
+      <meta itemprop="name" content="Moonsfrost">
+      <meta itemprop="description" content="曾经追求的不过是过往云烟">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Moonsfrost's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          FOI2021 Summer DAY 2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-12 10:36:13 / 修改时间：22:07:18" itemprop="dateCreated datePublished" datetime="2021-07-12T10:36:13+08:00">2021-07-12</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><a id="more"></a>
+
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><h4 id="前置知识：费马小定理"><a href="#前置知识：费马小定理" class="headerlink" title="前置知识：费马小定理"></a>前置知识：费马小定理</h4><p>$x^{p-1} \equiv 1 \pmod{p} ,p为质数$</p>
+<p>hash是一种将字符串转化为数字的对应关系，用于加快字符串比较的速度。（不是一一对应的，所以可能有hash冲突）</p>
+<ul>
+<li>常见的hash方法: $f(s)=\sum s_i \times base^i \mod p$，p是一个质数，如 $998244353$，$10^9+7$ 。</li>
+<li>求字串的hash值：$\frac{f(r)-f(l-1)}{base^{i-1}}$ 。</li>
+</ul>
+<h4 id="例题-1"><a href="#例题-1" class="headerlink" title="例题 1"></a>例题 1</h4><ul>
+<li>简单习题：给定有小写字母构成的字符串 $S$ ， $T$ ，问 $T$ 在 $S$ 中出现了多少次。</li>
+</ul>
+<h4 id="例题-2"><a href="#例题-2" class="headerlink" title="例题 2"></a>例题 2</h4><ul>
+<li>又一道简单题：给定一个字符串 $S$ ，请你求出其中有多少个不同的长度为 $m$ 的字串。</li>
+</ul>
+<h4 id="例题-3"><a href="#例题-3" class="headerlink" title="例题 3"></a>例题 3</h4><ul>
+<li><p>给定一个字符串 $S$ ，请你求出其中最长的回文串。</p>
+<p> 正反hash后，枚举中心点，二分求最长回文串。时间复杂度为 $O(n \log n)$ 。</p>
+</li>
+</ul>
+<h4 id="例题-4"><a href="#例题-4" class="headerlink" title="例题 4"></a>例题 4</h4><ul>
+<li><p>给定一个字符串 $S$ ，以及 $q$ 个询问查询子区间 $[l,r]$ 的最小循环节。</p>
+<p>我们发现，一个字符串的循环节长度一定是它的长度的约数。所以我们可以将它优化到 $\sqrt{n}$ 的级别。在check长度为 $m$ 的时候，我们只需比较 $l$ ~ $r-m$ 和 $l+m$ ~ $r$ 的hash值是否相等。（待补推导过程）</p>
+</li>
+</ul>
+<h3 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h3><p><del>好理解的数据结构</del></p>
+<h4 id="例题-1-1"><a href="#例题-1-1" class="headerlink" title="例题 1"></a>例题 1</h4><ul>
+<li>给定 $n$ 篇文章和 $m$ 个单词，求每个单词都在那些文章出现过。</li>
+</ul>
+<h4 id="例题-2-1"><a href="#例题-2-1" class="headerlink" title="例题 2"></a>例题 2</h4><ul>
+<li>给定 $n$ 个字符串 $s_i$ ，询问对于那些字符串，可以通过重排字母表顺序的方式使其字典序最小。$\sum s_i \leq 3 \times 10^5$</li>
+</ul>
+<p>在Trie树中插入所有字符串，然后每个字符串在树上跑一遍，对于每个字符大小关系，可以在一张图上连边，最后判环有无矛盾即可。</p>
+<h4 id="例题-3-Reverse"><a href="#例题-3-Reverse" class="headerlink" title="例题 3 Reverse"></a>例题 3 Reverse</h4><ul>
+<li><p>给定 $n$ 个数 $a_i$ ，你需要完成一下两种操作共 $q$ 次：</p>
+<ol>
+<li>给定 $k$ ，对于所有比 $k$ 打的数，做“Selia翻转”，Selia翻转是指将 $k$ 与被翻转的数写成二进制形式，找到他们最高的不同的位，翻转低于该位的所有二进制位；</li>
+<li>询问 $[l,r]$ 内的数有几个。</li>
+</ol>
+<p>$n,q \leq 10^5,a_i \leq 10^9$</p>
+</li>
+</ul>
+<p>考虑对所有数转化成二进制然后建01Trie，当我们翻转是，就按照大小关系，遍历到与 $k$ 不同的节点时，利用 <code>lazy_tag</code> ，打上标记，之后访问到这个节点再 <code>push_down</code> 。查询简单易懂，维护个 <code>size</code> 即可。</p>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><h4 id="引入问题"><a href="#引入问题" class="headerlink" title="引入问题"></a>引入问题</h4><ul>
+<li>（经典再放送）给定有小写字母构成的字符串 $S$ ， $T$ ，问 $T$ 在 $S$ 中出现了多少次。</li>
+</ul>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><ul>
+<li><strong>nex数组</strong>: $T$ 串的最长公共前后缀。</li>
+<li><strong>如何求nex数组</strong>:跟自己做匹配。</li>
+</ul>
+<h4 id="例题-1-2"><a href="#例题-1-2" class="headerlink" title="例题 1"></a>例题 1</h4><ul>
+<li>给定一个字符串 $S$ ，求多少种方案使得将字符串切成两部分，交换顺序之后与原串相同。</li>
+</ul>
+<p>将操作转化位复制一次原串于末尾，求其中原串个数，答案为 <code>原串个数-2</code> 。</p>
+<h4 id="例题-2-2"><a href="#例题-2-2" class="headerlink" title="例题 2"></a>例题 2</h4><ul>
+<li>给定字符串 $S$ ，你可以在 $S$ 末尾加上任意字符串 $T$ ，求 $S+T$ 的最小循环节。</li>
+</ul>
+<p>答案为 $n-nex_n$。（证明待补）</p>
+<h3 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h3><h4 id="引入问题："><a href="#引入问题：" class="headerlink" title="引入问题："></a>引入问题：</h4><ul>
+<li>给定一个匹配串 $S$ 和 $n$ 个被匹配串 $T_i$ ，求有多少串 $T_i$ 是 $S$ 的子串。</li>
+</ul>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><p><del>(要有一定的<strong>树理</strong>知识)</del></p>
+<ol>
+<li>首先对这 $n$ 个串建一个Trie树。</li>
+<li>然后我们为每个节点建一类似于KMP的nex数组的fail</li>
+</ol>
+<h4 id="例题-1-文本生成器"><a href="#例题-1-文本生成器" class="headerlink" title="例题 1 文本生成器"></a>例题 1 文本生成器</h4><ul>
+<li>给定 $n$ 个字符串 $s_i$ ，求有多少长度为 $m$ 的字符串 $t$ ，满足 $t$ 中不存在任何一个子串 $s_i$ 。 $n,m,|s_i| \leq 100$</li>
+</ul>
+<h4 id="例题-2-3"><a href="#例题-2-3" class="headerlink" title="例题 2"></a>例题 2</h4><h3 id="Manacher-马拉车"><a href="#Manacher-马拉车" class="headerlink" title="Manacher 马拉车"></a>Manacher <del>马拉车</del></h3><h4 id="引入问题-1"><a href="#引入问题-1" class="headerlink" title="引入问题"></a>引入问题</h4><ul>
+<li>给定一个字符串，请你求出其中最长的回文串。</li>
+</ul>
+<p>对于偶数长度，只需要在两个相邻的字符间插入一个空字符即可。</p>
+<h4 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h4><h4 id="例题-1-最长双回文串"><a href="#例题-1-最长双回文串" class="headerlink" title="例题 1 最长双回文串"></a>例题 1 最长双回文串</h4><ul>
+<li>定义双回文串为两个回文串依次拼接而成的串，求 $s$ 的最长双回文串。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/FOI2021/" rel="tag"># FOI2021</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/11/FOI2021-Summer-DAY-1/" rel="prev" title="FOI2021 Summer DAY 1">
+      <i class="fa fa-chevron-left"></i> FOI2021 Summer DAY 1
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hash"><span class="nav-number">1.1.</span> <span class="nav-text">hash</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86%EF%BC%9A%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="nav-number">1.1.1.</span> <span class="nav-text">前置知识：费马小定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="nav-number">1.1.2.</span> <span class="nav-text">例题 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-2"><span class="nav-number">1.1.3.</span> <span class="nav-text">例题 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-3"><span class="nav-number">1.1.4.</span> <span class="nav-text">例题 3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-4"><span class="nav-number">1.1.5.</span> <span class="nav-text">例题 4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trie"><span class="nav-number">1.2.</span> <span class="nav-text">Trie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-1-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">例题 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-2-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">例题 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-3-Reverse"><span class="nav-number">1.2.3.</span> <span class="nav-text">例题 3 Reverse</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KMP"><span class="nav-number">1.3.</span> <span class="nav-text">KMP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.1.</span> <span class="nav-text">引入问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.3.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-1-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">例题 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-2-2"><span class="nav-number">1.3.4.</span> <span class="nav-text">例题 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AC%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-number">1.4.</span> <span class="nav-text">AC自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">1.4.1.</span> <span class="nav-text">引入问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-1-%E6%96%87%E6%9C%AC%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">1.4.3.</span> <span class="nav-text">例题 1 文本生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-2-3"><span class="nav-number">1.4.4.</span> <span class="nav-text">例题 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manacher-%E9%A9%AC%E6%8B%89%E8%BD%A6"><span class="nav-number">1.5.</span> <span class="nav-text">Manacher 马拉车</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E9%97%AE%E9%A2%98-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">引入问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-1-%E6%9C%80%E9%95%BF%E5%8F%8C%E5%9B%9E%E6%96%87%E4%B8%B2"><span class="nav-number">1.5.3.</span> <span class="nav-text">例题 1 最长双回文串</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Moonsfrost"
+      src="/images/hpic.jpg">
+  <p class="site-author-name" itemprop="name">Moonsfrost</p>
+  <div class="site-description" itemprop="description">曾经追求的不过是过往云烟</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/moonsfrost" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;moonsfrost" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mydsqwe@foxmail.com" title="E-Mail → mydsqwe@foxmail.com"><i class="e-mail fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Moonsfrost</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

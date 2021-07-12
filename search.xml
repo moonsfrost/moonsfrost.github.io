@@ -196,4 +196,87 @@
         <tag>FOI2021</tag>
       </tags>
   </entry>
+  <entry>
+    <title>FOI2021 Summer DAY 2</title>
+    <url>/2021/07/12/FOI2021-Summer-DAY-2/</url>
+    <content><![CDATA[<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><a id="more"></a>
+
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><h4 id="前置知识：费马小定理"><a href="#前置知识：费马小定理" class="headerlink" title="前置知识：费马小定理"></a>前置知识：费马小定理</h4><p>$x^{p-1} \equiv 1 \pmod{p} ,p为质数$</p>
+<p>hash是一种将字符串转化为数字的对应关系，用于加快字符串比较的速度。（不是一一对应的，所以可能有hash冲突）</p>
+<ul>
+<li>常见的hash方法: $f(s)=\sum s_i \times base^i \mod p$，p是一个质数，如 $998244353$，$10^9+7$ 。</li>
+<li>求字串的hash值：$\frac{f(r)-f(l-1)}{base^{i-1}}$ 。</li>
+</ul>
+<h4 id="例题-1"><a href="#例题-1" class="headerlink" title="例题 1"></a>例题 1</h4><ul>
+<li>简单习题：给定有小写字母构成的字符串 $S$ ， $T$ ，问 $T$ 在 $S$ 中出现了多少次。</li>
+</ul>
+<h4 id="例题-2"><a href="#例题-2" class="headerlink" title="例题 2"></a>例题 2</h4><ul>
+<li>又一道简单题：给定一个字符串 $S$ ，请你求出其中有多少个不同的长度为 $m$ 的字串。</li>
+</ul>
+<h4 id="例题-3"><a href="#例题-3" class="headerlink" title="例题 3"></a>例题 3</h4><ul>
+<li><p>给定一个字符串 $S$ ，请你求出其中最长的回文串。</p>
+<p> 正反hash后，枚举中心点，二分求最长回文串。时间复杂度为 $O(n \log n)$ 。</p>
+</li>
+</ul>
+<h4 id="例题-4"><a href="#例题-4" class="headerlink" title="例题 4"></a>例题 4</h4><ul>
+<li><p>给定一个字符串 $S$ ，以及 $q$ 个询问查询子区间 $[l,r]$ 的最小循环节。</p>
+<p>我们发现，一个字符串的循环节长度一定是它的长度的约数。所以我们可以将它优化到 $\sqrt{n}$ 的级别。在check长度为 $m$ 的时候，我们只需比较 $l$ ~ $r-m$ 和 $l+m$ ~ $r$ 的hash值是否相等。（待补推导过程）</p>
+</li>
+</ul>
+<h3 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h3><p><del>好理解的数据结构</del></p>
+<h4 id="例题-1-1"><a href="#例题-1-1" class="headerlink" title="例题 1"></a>例题 1</h4><ul>
+<li>给定 $n$ 篇文章和 $m$ 个单词，求每个单词都在那些文章出现过。</li>
+</ul>
+<h4 id="例题-2-1"><a href="#例题-2-1" class="headerlink" title="例题 2"></a>例题 2</h4><ul>
+<li>给定 $n$ 个字符串 $s_i$ ，询问对于那些字符串，可以通过重排字母表顺序的方式使其字典序最小。$\sum s_i \leq 3 \times 10^5$</li>
+</ul>
+<p>在Trie树中插入所有字符串，然后每个字符串在树上跑一遍，对于每个字符大小关系，可以在一张图上连边，最后判环有无矛盾即可。</p>
+<h4 id="例题-3-Reverse"><a href="#例题-3-Reverse" class="headerlink" title="例题 3 Reverse"></a>例题 3 Reverse</h4><ul>
+<li><p>给定 $n$ 个数 $a_i$ ，你需要完成一下两种操作共 $q$ 次：</p>
+<ol>
+<li>给定 $k$ ，对于所有比 $k$ 打的数，做“Selia翻转”，Selia翻转是指将 $k$ 与被翻转的数写成二进制形式，找到他们最高的不同的位，翻转低于该位的所有二进制位；</li>
+<li>询问 $[l,r]$ 内的数有几个。</li>
+</ol>
+<p>$n,q \leq 10^5,a_i \leq 10^9$</p>
+</li>
+</ul>
+<p>考虑对所有数转化成二进制然后建01Trie，当我们翻转是，就按照大小关系，遍历到与 $k$ 不同的节点时，利用 <code>lazy_tag</code> ，打上标记，之后访问到这个节点再 <code>push_down</code> 。查询简单易懂，维护个 <code>size</code> 即可。</p>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><h4 id="引入问题"><a href="#引入问题" class="headerlink" title="引入问题"></a>引入问题</h4><ul>
+<li>（经典再放送）给定有小写字母构成的字符串 $S$ ， $T$ ，问 $T$ 在 $S$ 中出现了多少次。</li>
+</ul>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><ul>
+<li><strong>nex数组</strong>: $T$ 串的最长公共前后缀。</li>
+<li><strong>如何求nex数组</strong>:跟自己做匹配。</li>
+</ul>
+<h4 id="例题-1-2"><a href="#例题-1-2" class="headerlink" title="例题 1"></a>例题 1</h4><ul>
+<li>给定一个字符串 $S$ ，求多少种方案使得将字符串切成两部分，交换顺序之后与原串相同。</li>
+</ul>
+<p>将操作转化位复制一次原串于末尾，求其中原串个数，答案为 <code>原串个数-2</code> 。</p>
+<h4 id="例题-2-2"><a href="#例题-2-2" class="headerlink" title="例题 2"></a>例题 2</h4><ul>
+<li>给定字符串 $S$ ，你可以在 $S$ 末尾加上任意字符串 $T$ ，求 $S+T$ 的最小循环节。</li>
+</ul>
+<p>答案为 $n-nex_n$。（证明待补）</p>
+<h3 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h3><h4 id="引入问题："><a href="#引入问题：" class="headerlink" title="引入问题："></a>引入问题：</h4><ul>
+<li>给定一个匹配串 $S$ 和 $n$ 个被匹配串 $T_i$ ，求有多少串 $T_i$ 是 $S$ 的子串。</li>
+</ul>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><p><del>(要有一定的<strong>树理</strong>知识)</del></p>
+<ol>
+<li>首先对这 $n$ 个串建一个Trie树。</li>
+<li>然后我们为每个节点建一类似于KMP的nex数组的fail</li>
+</ol>
+<h4 id="例题-1-文本生成器"><a href="#例题-1-文本生成器" class="headerlink" title="例题 1 文本生成器"></a>例题 1 文本生成器</h4><ul>
+<li>给定 $n$ 个字符串 $s_i$ ，求有多少长度为 $m$ 的字符串 $t$ ，满足 $t$ 中不存在任何一个子串 $s_i$ 。 $n,m,|s_i| \leq 100$</li>
+</ul>
+<h4 id="例题-2-3"><a href="#例题-2-3" class="headerlink" title="例题 2"></a>例题 2</h4><h3 id="Manacher-马拉车"><a href="#Manacher-马拉车" class="headerlink" title="Manacher 马拉车"></a>Manacher <del>马拉车</del></h3><h4 id="引入问题-1"><a href="#引入问题-1" class="headerlink" title="引入问题"></a>引入问题</h4><ul>
+<li>给定一个字符串，请你求出其中最长的回文串。</li>
+</ul>
+<p>对于偶数长度，只需要在两个相邻的字符间插入一个空字符即可。</p>
+<h4 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h4><h4 id="例题-1-最长双回文串"><a href="#例题-1-最长双回文串" class="headerlink" title="例题 1 最长双回文串"></a>例题 1 最长双回文串</h4><ul>
+<li>定义双回文串为两个回文串依次拼接而成的串，求 $s$ 的最长双回文串。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>FOI2021</tag>
+      </tags>
+  </entry>
 </search>
