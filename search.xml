@@ -205,7 +205,7 @@
 <p>hash是一种将字符串转化为数字的对应关系，用于加快字符串比较的速度。（不是一一对应的，所以可能有hash冲突）</p>
 <ul>
 <li>常见的hash方法: $f(s)=\sum s_i \times base^i \mod p$，p是一个质数，如 $998244353$，$10^9+7$ 。</li>
-<li>求字串的hash值：$\frac{f(r)-f(l-1)}{base^{l-1}}$ 。</li>
+<li>求子串的hash值：$\frac{f(r)-f(l-1)}{base^{l-1}}$ 。</li>
 </ul>
 <h4 id="例题-1"><a href="#例题-1" class="headerlink" title="例题 1"></a>例题 1</h4><ul>
 <li>简单习题：给定有小写字母构成的字符串 $S$ ， $T$ ，问 $T$ 在 $S$ 中出现了多少次。</li>
