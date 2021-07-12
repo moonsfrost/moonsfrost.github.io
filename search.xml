@@ -218,7 +218,7 @@
 <p> 正反hash后，枚举中心点，二分求最长回文串。时间复杂度为 $O(n \log n)$ 。</p>
 </li>
 </ul>
-<h4 id="例题-4"><a href="#例题-4" class="headerlink" title="例题 4"></a>例题 4</h4><ul>
+<h4 id="例题-4"><a href="#例题-4" class="headerlink" title="例题 4"></a><a href="https://www.luogu.com.cn/problem/P3538">例题 4</a></h4><ul>
 <li><p>给定一个字符串 $S$ ，以及 $q$ 个询问查询子区间 $[l,r]$ 的最小循环节。</p>
 <p>我们发现，一个字符串的循环节长度一定是它的长度的约数。所以我们可以将它优化到 $\sqrt{n}$ 的级别。在check长度为 $m$ 的时候，我们只需比较 $l$ ~ $r-m$ 和 $l+m$ ~ $r$ 的hash值是否相等。（待补推导过程）</p>
 </li>
