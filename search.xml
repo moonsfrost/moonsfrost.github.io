@@ -225,7 +225,7 @@
 </ul>
 <h3 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h3><p><del>好理解的数据结构</del></p>
 <h4 id="例题-1-1"><a href="#例题-1-1" class="headerlink" title="例题 1"></a>例题 1</h4><ul>
-<li>给定 $n$ 篇文章和 $m$ 个单词，求每个单词都在那些文章出现过。</li>
+<li>给定 $n$ 篇文章和 $m$ 个单词，求每个单词都在哪些文章出现过。</li>
 </ul>
 <h4 id="例题-2-1"><a href="#例题-2-1" class="headerlink" title="例题 2"></a>例题 2</h4><ul>
 <li>给定 $n$ 个字符串 $s_i$ ，询问对于那些字符串，可以通过重排字母表顺序的方式使其字典序最小。$\sum s_i \leq 3 \times 10^5$</li>
@@ -264,10 +264,11 @@
 <li>首先对这 $n$ 个串建一个Trie树。</li>
 <li>然后我们为每个节点建一类似于KMP的nex数组的fail</li>
 </ol>
-<h4 id="例题-1-文本生成器"><a href="#例题-1-文本生成器" class="headerlink" title="例题 1 文本生成器"></a>例题 1 文本生成器</h4><ul>
+<h4 id="例题-1-文本生成器"><a href="#例题-1-文本生成器" class="headerlink" title="例题 1 文本生成器"></a><a href="https://www.luogu.com.cn/problem/P4052">例题 1 文本生成器</a></h4><ul>
 <li>给定 $n$ 个字符串 $s_i$ ，求有多少长度为 $m$ 的字符串 $t$ ，满足 $t$ 中不存在任何一个子串 $s_i$ 。 $n,m,|s_i| \leq 100$</li>
 </ul>
-<h4 id="例题-2-3"><a href="#例题-2-3" class="headerlink" title="例题 2"></a>例题 2</h4><h3 id="Manacher-马拉车"><a href="#Manacher-马拉车" class="headerlink" title="Manacher 马拉车"></a>Manacher <del>马拉车</del></h3><h4 id="引入问题-1"><a href="#引入问题-1" class="headerlink" title="引入问题"></a>引入问题</h4><ul>
+<h4 id="例题-2-3"><a href="#例题-2-3" class="headerlink" title="例题 2"></a>例题 2</h4><p>（待补）</p>
+<h3 id="Manacher-马拉车"><a href="#Manacher-马拉车" class="headerlink" title="Manacher 马拉车"></a>Manacher <del>马拉车</del></h3><h4 id="引入问题-1"><a href="#引入问题-1" class="headerlink" title="引入问题"></a>引入问题</h4><ul>
 <li>给定一个字符串，请你求出其中最长的回文串。</li>
 </ul>
 <p>对于偶数长度，只需要在两个相邻的字符间插入一个空字符即可。</p>
