@@ -283,7 +283,138 @@
   <entry>
     <title>FOI2021 Summer DAY 3</title>
     <url>/2021/07/21/FOI2021-Summer-DAY-3/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p><del>小菜</del></p>
+<a id="more"></a>
+
+<h3 id="组合计数基础"><a href="#组合计数基础" class="headerlink" title="组合计数基础"></a>组合计数基础</h3><h4 id="基本计数规则"><a href="#基本计数规则" class="headerlink" title="基本计数规则"></a>基本计数规则</h4><ul>
+<li>加法法则：事件A有m种产生方式，事件B有n种产生方式，则“事件A或B”有 $m+n$ 种产生方式。适用没有重叠事件的情况。</li>
+<li>乘法法则：事件A有m种产生方式，事件B有n种产生方式，则“事件A或B”有 $mn$ 种产生方式。适用彼此独立的情况。</li>
+</ul>
+<p>一般结合使用。</p>
+<ul>
+<li><p>例题 1：求1400的不同的正因子个数</p>
+<p>  由$1400=2^3 5^2 7$，得$n=(3+1)(2+1)(1+)=24$</p>
+</li>
+</ul>
+<h4 id="组合计数"><a href="#组合计数" class="headerlink" title="组合计数"></a>组合计数</h4><ul>
+<li><p>集合排列<br>定义 从$n$元集$S$中有序、不重复选取的$r$个元素称为$S$的一个$r$排列，$S$的所有$r$排列的数目记作 $P(n,r)$ 。</p>
+<p>定理 $P(n,r)=\frac{n!}{(n-r)!},r \leq n$</p>
+</li>
+<li><p>集合组合<br>定义 从$n$元集$S$中无序、不重复选取的$r$个元素称为$S$的一个$r$排列，$S$的所有$r$排列的数目记作 $C(n,r)$ 。</p>
+<p>定理 $C(n,r)=\frac{P(n,r)}{r!},r \leq n$</p>
+<p>推论：</p>
+<ol>
+<li><p>$C(n,r)=\frac{n}{r}C(n-1,r-1)$</p>
+</li>
+<li><p>$C(n,r)=C(n,n-r)$</p>
+</li>
+<li><p>$C(n,r)=C(n-1,r-1)+C(n-1,r)$ 称为 $\mathrm{Pascal}$ 公式。</p>
+<p>   这些性质对应了<strong>杨辉三角形</strong>。</p>
+</li>
+</ol>
+</li>
+<li><p>基本计数公式的应用</p>
+<ol>
+<li><p>从 $1-300$ 中任取 $3$ 个数使得其和能被 $3$ 整除的有多少种方法？</p>
+<p> 解：分类选取</p>
+<p> $A={1,4, \dots ,298}$</p>
+</li>
+</ol>
+</li>
+<li><p>多重集的排列</p>
+<p>定理 多重集 $S={n_1a_1,n_2a_2,\dots,n_ka_k}$，$a_i$ 类有 $n_i$ 个。</p>
+<ol>
+<li><p>全排列 $r=n, n=\sum n_i$ </p>
+<p>$$N=\frac{n!}{n_1!n_2!\dots n_k!}$$  </p>
+</li>
+<li></li>
+</ol>
+</li>
+<li><p>多重集的组合</p>
+<p>  定理 $S={n_1a_1,n_2a_2,\dots,n_ka_k}$，$a_i$ 类有 $n_i$ 个。$S$ 的 $r$ 组合数为 $N=C(k+r-1,r)$。</p>
+<p>  证明</p>
+<p>  一个 $r$ 组合为 ${x_1a_1,x_2a_2,\dots,x_ka_k}$,其实就是求方程 $x_1+x_2+\dots+x_k=r$，的非负整数解。用插板法，对应的实际上是 $S={r1,(k-1)0}$ 的全排列，也就是 $C(r,k+r-1)$;</p>
+<p>  例题：</p>
+<ol>
+<li><p>$r$ 个相同的球放到 $n$ 个不同的盒子里，每个盒子球数不限，求放球方法数。</p>
+<p>   解：实际上就是多重集的组合。</p>
+<ol start="2">
+<li><p>排列 $26$ 个字母，使得 $a$ 与$b$ 之间恰有 $7$ 个字母，求方法数。</p>
+<p>解：简单题</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>基本计数模型</p>
+<ol>
+<li>$(0,0)$ 到 $(m,n)$ 的非降路径数 $\binom{n+m}{m}$。</li>
+<li>$(a,b)$ 到 $(m,n)$ 的非降路径数 $\binom{n+m-a-b}{m-a}$。</li>
+<li></li>
+</ol>
+</li>
+<li><p>$\mathrm{Fibonacci}$ 数列</p>
+<p>$F_1=1,F_2=2$</p>
+<p>$F_i=F_{i-1}+F_{i-2},i \geq 3$</p>
+</li>
+<li><p>$\mathrm{Catalan}$ 数<br>一个凸 $n$ 边形的三角剖分方案数为$\mathrm{Catalan}$ 数 $h_n$。</p>
+<p>$h_n= \sum_{k=2}^n b_kb_{n-k+2},h_2=1$</p>
+<p>证明：</p>
+<p>$h_{n+1}=\frac{1}{n} \binom{2n-2}{n-1}$</p>
+<p>证明：过于复杂</p>
+</li>
+</ul>
+<h3 id="二项式定理"><a href="#二项式定理" class="headerlink" title="二项式定理"></a>二项式定理</h3><p>定理 设 $n$ 是正整数，对一切 $x$ 和 $y$<br>$$(x+y)^n = \sum_{k=0}^n \binom{n}{k} x^ky^{n-k}$$</p>
+<h4 id="变下项求和"><a href="#变下项求和" class="headerlink" title="变下项求和"></a>变下项求和</h4><p>$$\sum_{i=0}^n \binom{n}{k}=2^n$$<br>$$\sum_{i=0}^n (-1)^k \binom{n}{k}=0$$</p>
+<p>证明：运用二项式定理或根据集合子集定义进行组合分析。</p>
+<h4 id="变上项求和"><a href="#变上项求和" class="headerlink" title="变上项求和"></a>变上项求和</h4><h3 id="矩阵快速幂"><a href="#矩阵快速幂" class="headerlink" title="矩阵快速幂"></a>矩阵快速幂</h3><p><del>很简单，挂机了</del></p>
+<h3 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h3><h4 id="质数"><a href="#质数" class="headerlink" title="质数"></a>质数</h4><p>只有两个正因数的正整数。</p>
+<h4 id="最大公因数"><a href="#最大公因数" class="headerlink" title="最大公因数"></a>最大公因数</h4><p>$a$ 和 $b$ 的公因数中最大值称为 $a$，$b$ 的最大公因数，记作 $\gcd(a,b)$。</p>
+<h4 id="同余-1"><a href="#同余-1" class="headerlink" title="同余"></a>同余</h4><p>设 $m$ 是正整数，$a$ 个 $b$ 是整数，如果 $m|a-b$ ，则称 $a$ 模 $m$ 同余与 $b$，或 $a$ 与 $b$ 模 $m$ 同余，记作$a \equiv b (\bmod m)$。</p>
+<ul>
+<li>例题 $3^{455}$ 的个位数是多少？（简单题）</li>
+</ul>
+<h4 id="一次同余方程"><a href="#一次同余方程" class="headerlink" title="一次同余方程"></a>一次同余方程</h4><p>$ax \equiv c (\bmod m),m &gt; 0$</p>
+<p>一次同余方程的解：使方程成立的整数</p>
+<p>定理 整数 $a,b$ 互质的充要条件为<br>$$\exist x,y,ax+by=1$$</p>
+<p>定理 方程 $ax \equiv c (\bmod m)$ 有解的充要条件是 $\gcd(a,m)|c$。</p>
+<h4 id="模m逆"><a href="#模m逆" class="headerlink" title="模m逆"></a>模m逆</h4><p>如果 $ab \equiv 1 (\bmod m)$，则称 $b$ 是 $a$ 的模 $m$ 逆，记作 $a^{-1}(\bmod m)$。</p>
+<p>定理：</p>
+<ol>
+<li>$a$</li>
+<li>$a$ 的模 $m$ 逆在模 $m$ 意义下至多有一个。 </li>
+</ol>
+<h4 id="中国剩余定理（CRT）"><a href="#中国剩余定理（CRT）" class="headerlink" title="中国剩余定理（CRT）"></a>中国剩余定理（CRT）</h4><p>解方程组</p>
+<h4 id="欧几里得算法（GCD）"><a href="#欧几里得算法（GCD）" class="headerlink" title="欧几里得算法（GCD）"></a>欧几里得算法（GCD）</h4><p><del>不会吧不会吧，不会有人到现在还不会gcd吧</del></p>
+<h4 id="拓展欧几里得算法-EXGCD"><a href="#拓展欧几里得算法-EXGCD" class="headerlink" title="拓展欧几里得算法(EXGCD)"></a>拓展欧几里得算法(EXGCD)</h4><p>求二元一次不定方程的整数解。</p>
+<h4 id="欧拉（Eular）定理"><a href="#欧拉（Eular）定理" class="headerlink" title="欧拉（Eular）定理"></a>欧拉（Eular）定理</h4><p>欧拉函数：</p>
+<p>欧拉定理：<br>$$a^{\phi(n)}\equiv 1(\bmod n),a,n互质$$</p>
+<h4 id="费马（Fermat）小定理"><a href="#费马（Fermat）小定理" class="headerlink" title="费马（Fermat）小定理"></a>费马（Fermat）小定理</h4><p>设 $p$ 是素数，$a$ 与 $p$ 互素，则<br>$$a^{p-1} \equiv 1 (\bmod p)$$</p>
+<h3 id="树上高斯消元"><a href="#树上高斯消元" class="headerlink" title="树上高斯消元"></a>树上高斯消元</h3><p>????????????????????????????</p>
+<h4 id="高斯消元"><a href="#高斯消元" class="headerlink" title="高斯消元"></a>高斯消元</h4><h4 id="例题-随机游走问题"><a href="#例题-随机游走问题" class="headerlink" title="例题 随机游走问题"></a>例题 随机游走问题</h4><ul>
+<li><p>在一张无向连通图中，求从1点走到n点的期望步数。</p>
+<p>解：记 $f_u$ 表示点 $u$ 走到 $n$ 的期望步数。对每个点建立方程。</p>
+</li>
+</ul>
+<h4 id="例题-树上随机游走问题"><a href="#例题-树上随机游走问题" class="headerlink" title="例题 树上随机游走问题"></a>例题 树上随机游走问题</h4><ul>
+<li><p>同上，图变成树。</p>
+<p>解：将 $n$ 号点设为根节点，对每个点建立同样的方程，此时叶子的方程总是 $f_u=f_{father_u}+1$</p>
+</li>
+</ul>
+<h3 id="Miller-Rabin-素性测试"><a href="#Miller-Rabin-素性测试" class="headerlink" title="Miller-Rabin 素性测试"></a>Miller-Rabin 素性测试</h3><p>不保证100%正确，<del>但是可以放心地使用！</del></p>
+<ul>
+<li>引理 1：费马小定理</li>
+<li>引理 2：二次探测定理 如果 $p$ 是一个素数，并且 $0&lt;x&lt;p$，方程 $x^2 \equiv 1(\bmod p)$ 的解为 $x=1,p-1$</li>
+</ul>
+<p>假设 $n$ 是奇素数，则 $n-1$ 必为偶数。令 $n-1=2^qm$</p>
+<p>随机</p>
+<h3 id="Pollard-Rho-大整数因数分解"><a href="#Pollard-Rho-大整数因数分解" class="headerlink" title="Pollard Rho 大整数因数分解"></a>Pollard Rho 大整数因数分解</h3><p>Surrender</p>
+<h3 id="卢卡斯定理"><a href="#卢卡斯定理" class="headerlink" title="卢卡斯定理"></a>卢卡斯定理</h3><p>设 $p$ 为素数。将非负整数 $a,b$ 表示为 $p$ 进制（允许前导零），$a=a_kp^k+a_{k-1}p^{k-1}+\dots+a_1p+a_0,b=b_kp^k+b_{k-1}p^{k-1}+\dots+b_1p+b_0$</p>
+<p>$$C_a^b \equiv C_{a_k}^{b_k}C_{a_{k-1}}^{b_{k-1}}\dots C_{a_0}^{b_0}(\bmod p)$$</p>
+]]></content>
+      <tags>
+        <tag>FOI2021</tag>
+      </tags>
   </entry>
   <entry>
     <title>FOI2021 Summer DAY 4</title>
