@@ -778,4 +778,37 @@
         <tag>FOI2021</tag>
       </tags>
   </entry>
+  <entry>
+    <title>KMP 算法</title>
+    <url>/2021/07/21/KMP-%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="KMP-算法"><a href="#KMP-算法" class="headerlink" title="KMP 算法"></a>KMP 算法</h2><p>用来解决字符串问题。</p>
+<a id="more"></a>
+
+<p>考虑这样一个问题：</p>
+<blockquote>
+<p>给定有小写字母构成的字符串 $S$ ， $T$ ，问 $T$ 在 $S$ 中是否出现过。</p>
+</blockquote>
+<p>朴素做法很简单，就是暴力从左到右去匹配 $T$ ，如果失败就推倒重来，这样做的时间复杂度显然是 $O(n)$ 的。</p>
+<p>我们需要考虑如何优化这一过程。</p>
+<p><img src="https://z3.ax1x.com/2021/07/21/Wa58OJ.png"></p>
+<p>我们从位置 $1$ 开始匹配，嗯，很好，匹配上了，直到位置 $3$ 都匹配成功了，但是到了位置 $4$ 却失配了。按照暴力的做法，这个时候肯定是推倒重来，但是KMP算法却提供了一种更加优秀的解决方案。</p>
+<p>我们可以维护 $T$ 串的 $nex$ 数组，$nex_i$ 表示 $T$ 串从 $1$ 到 $i$ 的最长相同前后缀。</p>
+<p>当我们在位置 $4$ 失配时，我们可以看下 $nex_3$ ，发现 $1$-$1$ 和 $3$-$3$ 是相同的，那我们可以不必全部退回，而是 $T$ 串只退回到位置 $1$ 然后继续匹配 $S$ 串的位置 $4$ 。</p>
+<p>在这个例子中只跳了一次 $nex$ ，但是实际上可能跳多次才能匹配成功，边界情况为 $nex_1$ 。</p>
+<p>那我们如何求出 $nex$ 数组呢，核心的思想是：<strong>自己和自己匹配</strong>。</p>
+<p>设当前自己匹配自己到位置 $i$ ，我们就检查位置 $nex_{i-1}+1$ 是否和 $i$ 相同，是的话，则 $nex_i=nex_{i-1}+1$ ，否则就按照KMP匹配的思路判断位置 $nex_{nex_{i-1}}$ 是否与位置 $i$ 相同，不是的话则继续向下查找，直至相同或达到边界情况 $nex_0$ 。</p>
+<p>乍看之下KMP算法复杂度十分玄学，但是我们可以引入类似物理的能量守恒定理的思想，初始化时，跳 $nex$ 必须有之前的 $nex_i$ 成功赋值来提供能量，所以时间复杂度为 $O(T_{len})$，查询时也类似，时间复杂度为 $O(S_{len})$ 。综上所述，KMP算法的总时间复杂度为 $O(T_{len}+S_{len})$ 。</p>
+<p>我们可以来考虑引入问题的稍微加强版的模板题。</p>
+<p><a href="https://www.luogu.com.cn/problem/P3375">Luogu P3375 【模板】KMP字符串匹配
+</a></p>
+<blockquote>
+<p>询问 $S$ 串在 $T$ 串中所有出现的位置。</p>
+</blockquote>
+<p>实际上我们只需要在 $S$ 匹配成功时，输出 $i-T_{len}+1$ ，并且将匹配位置挪回 $nex_{T_{len}}$ 即可。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f=<span class="number">1</span>,num=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> rd=getchar();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(rd))&#123;</span><br><span class="line">        <span class="keyword">if</span>(rd==<span class="string">&#x27;-&#x27;</span>) f=<span class="number">-1</span>;</span><br><span class="line">        rd=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(rd))&#123;</span><br><span class="line">        num=num*<span class="number">10</span>+rd<span class="number">-48</span>;</span><br><span class="line">        rd=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f*num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1000009</span></span><br><span class="line"><span class="keyword">char</span> S[MAXN],T[MAXN];</span><br><span class="line"><span class="keyword">int</span> nex[MAXN],slen,tlen;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">begin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    slen=<span class="built_in">strlen</span>(S)<span class="number">-1</span>,tlen=<span class="built_in">strlen</span>(T)<span class="number">-1</span>;nex[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=tlen;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> now=i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(T[nex[now]+<span class="number">1</span>]!=T[i]&amp;&amp;now) now=nex[now];</span><br><span class="line">        <span class="keyword">if</span>(T[nex[now]+<span class="number">1</span>]==T[i]) nex[i]=nex[now]+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,S+<span class="number">1</span>);S[<span class="number">0</span>]=<span class="string">&#x27;$&#x27;</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,T+<span class="number">1</span>);T[<span class="number">0</span>]=<span class="string">&#x27;$&#x27;</span>;</span><br><span class="line">    begin();</span><br><span class="line">    <span class="keyword">int</span> now=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=slen;i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(S[i]!=T[now+<span class="number">1</span>]&amp;&amp;now) now=nex[now];</span><br><span class="line">        <span class="keyword">if</span>(S[i]==T[now+<span class="number">1</span>]) now++;</span><br><span class="line">        <span class="keyword">if</span>(now==tlen)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i-tlen+<span class="number">1</span>);</span><br><span class="line">            now=nex[now];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tlen;i++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,nex[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
 </search>
